@@ -14,16 +14,27 @@
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
-  <!-- un-comment this code to enable service worker
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.error('Error', err));
-    }
-  </script>-->
-
   <link href="build/main.css" rel="stylesheet">
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '525593087775983',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.10'
+      });
+      FB.AppEvents.logPageView();   
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
 </head>
 <body>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Eventos Facebook SDK</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <p *ngIf="carregou">{{ carregou }}</p>
+  
+  <button ion-button (click)="onClickEvent( 'EVENTO CLIQUE' )">
+    Diparar um evento de clique.
+  </button><!-- dispara o evento de clique -->
+</ion-content>
